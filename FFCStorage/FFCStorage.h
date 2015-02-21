@@ -16,4 +16,8 @@ FOUNDATION_EXPORT const unsigned char FFCStorageVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FFCStorage/PublicHeader.h>
 
-
+#import <FFCStorage/FFCNetworkClient.h>
+#import <FFCStorage/FFCBearerCredentials.h>
+#import <FFCStorage/FFCStoreModel.h>
+#import <FFCStorage/FFCNetworkStore.h>
+#import <FFCStorage/FFCCredentialStore.h>

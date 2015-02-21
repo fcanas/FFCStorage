@@ -1,0 +1,16 @@
+PODS:
+  - FXKeychain (1.5.2)
+  - OHMKit (0.2.0)
+  - SafeCast (1.1.1)
+
+DEPENDENCIES:
+  - FXKeychain
+  - OHMKit
+  - SafeCast
+
+SPEC CHECKSUMS:
+  FXKeychain: c97c352f1923809032339514ec4d6b0ed151bc3b
+  OHMKit: 12a7eddb8cc4c5b6c90ffd78fa136b0b55f55bc7
+  SafeCast: b6a1eb23f01f12fa8008dbb0b40e9ad6e4045fff
+
+COCOAPODS: 0.35.0

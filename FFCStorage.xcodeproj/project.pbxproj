@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EBAC402F18B33C76A2DD1B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 815B2C762D26A7F5E90A6493 /* libPods.a */; };
 		E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22191A9E29C900A855D1 /* FFCStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7BA22201A9E29C900A855D1 /* FFCStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA22141A9E29C900A855D1 /* FFCStorage.framework */; };
 		E7BA22271A9E29C900A855D1 /* FFCStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22261A9E29C900A855D1 /* FFCStorageTests.m */; };
+		E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */; };
+		E7BA22331A9E2C3300A855D1 /* FFCNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */; };
+		E7BA22361A9E2D0C00A855D1 /* FFCBearerCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */; };
+		E7BA22371A9E2D0C00A855D1 /* FFCBearerCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */; };
+		E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */; };
+		E7BA223C1A9E2EAD00A855D1 /* FFCNetworkStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */; };
+		E7BA223D1A9E2EAD00A855D1 /* FFCNetworkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */; };
+		E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */; };
+		E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +33,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		815B2C762D26A7F5E90A6493 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA83566A1180A3D4944F07DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E7BA22141A9E29C900A855D1 /* FFCStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA22181A9E29C900A855D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7BA22191A9E29C900A855D1 /* FFCStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCStorage.h; sourceTree = "<group>"; };
 		E7BA221F1A9E29C900A855D1 /* FFCStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA22251A9E29C900A855D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7BA22261A9E29C900A855D1 /* FFCStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCStorageTests.m; sourceTree = "<group>"; };
+		E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkClient.h; sourceTree = "<group>"; };
+		E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkClient.m; sourceTree = "<group>"; };
+		E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCBearerCredentials.h; sourceTree = "<group>"; };
+		E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCBearerCredentials.m; sourceTree = "<group>"; };
+		E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCStoreModel.h; sourceTree = "<group>"; };
+		E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkStore.h; sourceTree = "<group>"; };
+		E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkStore.m; sourceTree = "<group>"; };
+		E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCCredentialStore.h; sourceTree = "<group>"; };
+		E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCCredentialStore.m; sourceTree = "<group>"; };
+		FCD922668BBB5B21E6F25DB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBAC402F18B33C76A2DD1B9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +73,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A12AFDAB31F06F094C688D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				815B2C762D26A7F5E90A6493 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AE3C9DDA1226E1D21562BF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCD922668BBB5B21E6F25DB6 /* Pods.debug.xcconfig */,
+				DA83566A1180A3D4944F07DF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E7BA220A1A9E29C900A855D1 = {
 			isa = PBXGroup;
 			children = (
 				E7BA22161A9E29C900A855D1 /* FFCStorage */,
 				E7BA22231A9E29C900A855D1 /* FFCStorageTests */,
 				E7BA22151A9E29C900A855D1 /* Products */,
+				8AE3C9DDA1226E1D21562BF7 /* Pods */,
+				3A12AFDAB31F06F094C688D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +115,15 @@
 			children = (
 				E7BA22191A9E29C900A855D1 /* FFCStorage.h */,
 				E7BA22171A9E29C900A855D1 /* Supporting Files */,
+				E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */,
+				E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */,
+				E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */,
+				E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */,
+				E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */,
+				E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */,
+				E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */,
+				E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */,
+				E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */,
 			);
 			path = FFCStorage;
 			sourceTree = "<group>";
@@ -109,7 +160,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */,
 				E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */,
+				E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */,
+				E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */,
+				E7BA22361A9E2D0C00A855D1 /* FFCBearerCredentials.h in Headers */,
+				E7BA223C1A9E2EAD00A855D1 /* FFCNetworkStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,10 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7BA222A1A9E29C900A855D1 /* Build configuration list for PBXNativeTarget "FFCStorage" */;
 			buildPhases = (
+				400BDD2A877CA4028F8FD0AE /* Check Pods Manifest.lock */,
 				E7BA220F1A9E29C900A855D1 /* Sources */,
 				E7BA22101A9E29C900A855D1 /* Frameworks */,
 				E7BA22111A9E29C900A855D1 /* Headers */,
 				E7BA22121A9E29C900A855D1 /* Resources */,
+				BA0112FFE60D069CBEB40676 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,11 +262,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		400BDD2A877CA4028F8FD0AE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA0112FFE60D069CBEB40676 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7BA220F1A9E29C900A855D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BA22331A9E2C3300A855D1 /* FFCNetworkClient.m in Sources */,
+				E7BA223D1A9E2EAD00A855D1 /* FFCNetworkStore.m in Sources */,
+				E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */,
+				E7BA22371A9E2D0C00A855D1 /* FFCBearerCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +412,7 @@
 		};
 		E7BA222B1A9E29C900A855D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCD922668BBB5B21E6F25DB6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -332,6 +428,7 @@
 		};
 		E7BA222C1A9E29C900A855D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA83566A1180A3D4944F07DF /* Pods.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -394,6 +491,7 @@
 				E7BA222C1A9E29C900A855D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7BA222D1A9E29C900A855D1 /* Build configuration list for PBXNativeTarget "FFCStorageTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +500,7 @@
 				E7BA222F1A9E29C900A855D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
