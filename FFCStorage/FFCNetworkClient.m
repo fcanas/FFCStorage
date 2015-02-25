@@ -12,6 +12,7 @@
 @interface FFCNetworkClient ()
 @property (nonatomic, readonly, copy) NSString *host;
 @property (nonatomic, readonly, copy) NSString *path;
+@property (nonatomic, readonly, copy) NSString *scheme;
 @end
 
 @implementation FFCNetworkClient
@@ -33,13 +34,24 @@ static FFCNetworkClient *_sharedClient = nil;
     return [self initWithHost:nil path:nil];
 }
 
-- (instancetype)initWithHost:(NSString *)host path:(NSString *)path
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path
 {
     self = [super init];
     NSAssert(host!=nil, @"Initializing a Client without a hostname is not allowed.");
     
     if (self == nil) {
         return nil;
+    }
+    
+    switch (scheme) {
+        case FFCClientSchemeHTTPS:
+            _scheme = @"https";
+            break;
+        case FFCClientSchemeHTTP:
+            _scheme = @"http";
+            break;
+        default:
+            break;
     }
     
     _host = [host copy];
@@ -50,10 +62,16 @@ static FFCNetworkClient *_sharedClient = nil;
     return self;
 }
 
+- (instancetype)initWithHost:(NSString *)host path:(NSString *)path
+{
+    self = [self initWithScheme:FFCClientSchemeHTTPS host:host path:path];
+    return self;
+}
+
 - (NSURL *)URLForRelativePath:(NSString *)subpath
 {
     NSURLComponents *components = [[NSURLComponents alloc] init];
-    components.scheme = @"http";
+    components.scheme = self.scheme;
     components.host = self.host;
     components.path = [self.path stringByAppendingPathComponent:subpath];
     return [components URL];

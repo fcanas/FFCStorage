@@ -10,14 +10,27 @@
 
 @class FFCBearerCredentials;
 
+typedef NS_ENUM(NSUInteger, FFCClientScheme) {
+    FFCClientSchemeHTTP,
+    FFCClientSchemeHTTPS
+};
+
+
 @interface FFCNetworkClient : NSObject
 + (instancetype)sharedClient;
 
 @property (nonatomic, strong) FFCBearerCredentials *credentials;
 @property (nonatomic, readonly, strong) NSURLSession *session;
 
+- (instancetype)init __attribute((__unavailable__));
++ (instancetype)new __attribute((__unavailable__));
+
 - (instancetype)initWithHost:(NSString *)host path:(NSString *)path;
+
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path NS_DESIGNATED_INITIALIZER;
+
 - (NSMutableURLRequest *)baseRequestForSubpath:(NSString *)subpath;
+
 - (void)makeSharedClient;
 
 @end
