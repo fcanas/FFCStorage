@@ -11,7 +11,6 @@
 @protocol FFCStoreModel <NSObject>
 
 @property (nonatomic, assign) NSInteger id;
-@property (nonatomic, copy) NSDate *createdOn;
 
 - (NSString *)route;
 + (NSString *)route;
