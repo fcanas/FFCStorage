@@ -20,6 +20,7 @@
 		E7BA223D1A9E2EAD00A855D1 /* FFCNetworkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */; };
 		E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */; };
 		E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */; };
+		E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22451A9E7ACF00A855D1 /* FFCStore.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkStore.m; sourceTree = "<group>"; };
 		E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCCredentialStore.h; sourceTree = "<group>"; };
 		E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCCredentialStore.m; sourceTree = "<group>"; };
+		E7BA22451A9E7ACF00A855D1 /* FFCStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCStore.h; sourceTree = "<group>"; };
 		FCD922668BBB5B21E6F25DB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */,
 				E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */,
 				E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */,
+				E7BA22451A9E7ACF00A855D1 /* FFCStore.h */,
 			);
 			path = FFCStorage;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */,
+				E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */,
 				E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */,
 				E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */,
 				E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */,

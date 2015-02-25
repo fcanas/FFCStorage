@@ -8,6 +8,7 @@
 
 #import "FFCNetworkStore.h"
 #import "FFCNetworkClient.h"
+#import "FFCStoreModel.h"
 
 #import <SafeCast/SafeCast.h>
 

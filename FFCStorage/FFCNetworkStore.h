@@ -8,16 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FFCStoreModel.h"
+#import "FFCStore.h"
 
-@interface FFCNetworkStore : NSObject
-
-- (void)getClass:(Class<FFCStoreModel>)class completion:(void(^)(NSArray *, NSError *))completion;
-- (void)getClass:(Class)class atPath:(NSString *)path completion:(void(^)(NSArray *, NSError *))completion;
-
-- (void)getModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *))completion;
-- (void)saveModel:(NSObject<FFCStoreModel> *)model completion:(void(^)(NSError *))completion;
-
-- (void)deleteModel:(NSObject<FFCStoreModel> *)model;
+@interface FFCNetworkStore : NSObject <FFCStore>
 
 @end
