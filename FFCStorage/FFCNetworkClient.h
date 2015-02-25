@@ -15,15 +15,14 @@ typedef NS_ENUM(NSUInteger, FFCClientScheme) {
     FFCClientSchemeHTTPS
 };
 
-
 @interface FFCNetworkClient : NSObject
 + (instancetype)sharedClient;
 
 @property (nonatomic, strong) FFCBearerCredentials *credentials;
 @property (nonatomic, readonly, strong) NSURLSession *session;
 
-- (instancetype)init __attribute((__unavailable__));
-+ (instancetype)new __attribute((__unavailable__));
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)initWithHost:(NSString *)host path:(NSString *)path;
 
