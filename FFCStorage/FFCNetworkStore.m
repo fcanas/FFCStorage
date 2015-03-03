@@ -41,7 +41,7 @@
     NSAssert2([class conformsToProtocol:@protocol(FFCStoreModel)],
               @"%@ requires %@ to conform to FFCStoreModelProtocol",
               NSStringFromClass([self class]),
-              NSStringFromClass([self class]));
+              NSStringFromClass(class));
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:path];
     request.HTTPMethod = @"GET";
     NSURLSessionTask *task = [self.client.session dataTaskWithRequest:request
@@ -72,23 +72,32 @@
     request.HTTPMethod = @"GET";
     NSURLSessionTask *task = [self.client.session dataTaskWithRequest:request
                                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                        
+                                                        NSError *serializationError = nil;
+                                                        
                                                         [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:kNilOptions
-                                                                                                                  error:nil]
+                                                                                                                  error:&serializationError]
                                                                       intoBlock:^(NSDictionary *mDict) {
                                                                           [instance setValuesForKeysWithDictionary:mDict];
                                                                       }];
+                                                        
+                                                        if (serializationError) {
+                                                            completion(serializationError);
+                                                            return;
+                                                        }
+                                                        
                                                         completion(error);
                                                     }];
     [task resume];
 }
 
-- (void)saveModel:(NSObject<FFCStoreModel> *)model completion:(void(^)(NSError *))completion
+- (void)saveModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *))completion
 {
     NSError *serializationError = nil;
-    NSMutableURLRequest *request = [self.client baseRequestForSubpath:model.route];
-    request.HTTPMethod = ([model id] == 0)?@"POST":@"PUT";
-    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:[model asJSON]
+    NSMutableURLRequest *request = [self.client baseRequestForSubpath:instance.route];
+    request.HTTPMethod = ([instance id] == 0)?@"POST":@"PUT";
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:[instance asJSON]
                                                        options:kNilOptions
                                                          error:&serializationError];
     if (serializationError != nil) {
@@ -104,11 +113,21 @@
     
     NSURLSessionTask *task = [self.client.session dataTaskWithRequest:request
                                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                        NSDictionary *mDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                                                        [model setValuesForKeysWithDictionary:mDict];
-                                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                                            completion(error);
-                                                        });
+                                                        NSError *serializationError = nil;
+                                                        
+                                                        [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                options:kNilOptions
+                                                                                                                  error:&serializationError]
+                                                                      intoBlock:^(NSDictionary *mDict) {
+                                                                          [instance setValuesForKeysWithDictionary:mDict];
+                                                                      }];
+                                                        
+                                                        if (serializationError) {
+                                                            completion(serializationError);
+                                                            return;
+                                                        }
+                                                        
+                                                        completion(error);
                                                     }];
     [task resume];
 }
