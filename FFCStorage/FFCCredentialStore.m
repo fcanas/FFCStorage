@@ -89,7 +89,6 @@ NSString * const FFCClientKey = @"FFCClientKey";
                                                                                                error:nil]];
         NSArray *errorsArray = [NSArray safe_cast:userDataDict[@"errors"]];
         userDataDict = [NSDictionary safe_cast:userDataDict[@"data"]];
-        
         FXKeychain *keychain = [FXKeychain defaultKeychain];
         
         if (![NSHTTPURLResponse safe_cast:response intoBlock:^(NSHTTPURLResponse *response) {
@@ -112,6 +111,11 @@ NSString * const FFCClientKey = @"FFCClientKey";
                         }
                     }];
                 }];
+            } else if (response.statusCode == 401) {
+                if ([errorsArray.firstObject isEqualToString:@"Invalid login credentials. Please try again."]) {
+                    [[self class] clearCredentials];
+                }
+                
             } else {
                 completion(nil, errorsArray.firstObject);
             }
