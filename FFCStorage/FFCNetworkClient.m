@@ -12,6 +12,7 @@
 @interface FFCNetworkClient ()
 @property (nonatomic, readonly, copy) NSString *host;
 @property (nonatomic, readonly, copy) NSString *path;
+@property (nonatomic, readonly, copy) NSNumber *port;
 @property (nonatomic, readonly, copy) NSString *scheme;
 @end
 
@@ -32,6 +33,19 @@ static FFCNetworkClient *_sharedClient = nil;
 - (instancetype)init
 {
     return [self initWithHost:nil path:nil];
+}
+
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host port:(NSNumber *)port path:(NSString *)path
+{
+    self = [self initWithScheme:scheme host:host path:path];
+    
+    if (self == nil) {
+        return nil;
+    }
+    
+    _port = port;
+    
+    return self;
 }
 
 - (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path
@@ -74,6 +88,7 @@ static FFCNetworkClient *_sharedClient = nil;
     components.scheme = self.scheme;
     components.host = self.host;
     components.path = [self.path stringByAppendingPathComponent:subpath];
+    components.port = self.port;
     return [components URL];
 }
 

@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, FFCClientScheme) {
 
 - (instancetype)initWithHost:(NSString *)host path:(NSString *)path;
 
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host port:(NSNumber *)port path:(NSString *)path;
+
 - (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path NS_DESIGNATED_INITIALIZER;
 
 - (NSMutableURLRequest *)baseRequestForSubpath:(NSString *)subpath;
