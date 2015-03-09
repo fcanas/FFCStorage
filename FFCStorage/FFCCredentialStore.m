@@ -115,7 +115,7 @@ NSString * const FFCClientKey = @"FFCClientKey";
                 if ([errorsArray.firstObject isEqualToString:@"Invalid login credentials. Please try again."]) {
                     [[self class] clearCredentials];
                 }
-                
+                completion(nil, errorsArray.firstObject);
             } else {
                 completion(nil, errorsArray.firstObject);
             }
