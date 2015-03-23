@@ -84,11 +84,12 @@ NSString * const FFCClientKey = @"FFCClientKey";
             NSLog(@"error: %@", error);
         }
         
-        NSDictionary *userDataDict = [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
+        NSDictionary *responseDataDict = [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
                                                                                              options:kNilOptions
                                                                                                error:nil]];
-        NSArray *errorsArray = [NSArray safe_cast:userDataDict[@"errors"]];
-        userDataDict = [NSDictionary safe_cast:userDataDict[@"data"]];
+        NSArray *errorsArray = [NSArray safe_cast:responseDataDict[@"errors"]];
+        NSDictionary *errorsDict = [NSDictionary safe_cast:responseDataDict[@"errors"]];
+        NSDictionary *userDataDict = [NSDictionary safe_cast:responseDataDict[@"data"]];
         FXKeychain *keychain = [FXKeychain defaultKeychain];
         
         if (![NSHTTPURLResponse safe_cast:response intoBlock:^(NSHTTPURLResponse *response) {
