@@ -92,7 +92,7 @@
     [task resume];
 }
 
-- (void)saveModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *))completion
+- (void)saveModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSObject<FFCStoreModel> *, NSError *))completion
 {
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:instance.route];
@@ -104,7 +104,7 @@
         NSLog(@"Encountered serialization error :: %@", serializationError);
         if (request.HTTPBody == nil) {
             NSLog(@"Aborting");
-            completion(serializationError);
+            completion(nil, serializationError);
             return;
         } else {
             NSLog(@"Continuing");
@@ -114,20 +114,22 @@
     NSURLSessionTask *task = [self.client.session dataTaskWithRequest:request
                                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                         NSError *serializationError = nil;
+                                                        NSObject<FFCStoreModel> * __block returnedInstance = nil;
                                                         
                                                         [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:kNilOptions
                                                                                                                   error:&serializationError]
                                                                       intoBlock:^(NSDictionary *mDict) {
-                                                                          [instance setValuesForKeysWithDictionary:mDict];
+                                                                          returnedInstance = [[instance class] new];
+                                                                          [returnedInstance setValuesForKeysWithDictionary:mDict];
                                                                       }];
                                                         
                                                         if (serializationError) {
-                                                            completion(serializationError);
+                                                            completion(nil, serializationError);
                                                             return;
                                                         }
                                                         
-                                                        completion(error);
+                                                        completion(returnedInstance, error);
                                                     }];
     [task resume];
 }
