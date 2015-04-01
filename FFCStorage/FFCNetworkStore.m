@@ -18,7 +18,7 @@
 
 @implementation FFCNetworkStore
 
-- (instancetype)init
+- (instancetype)initWithNetworkClient:(FFCNetworkClient *)networkClient
 {
     self = [super init];
     
@@ -26,8 +26,14 @@
         return nil;
     }
     
-    _client = [FFCNetworkClient sharedClient];
+    _client = networkClient;
     
+    return self;
+}
+
+- (instancetype)init
+{
+    self = [self initWithNetworkClient:[FFCNetworkClient sharedClient]];
     return self;
 }
 

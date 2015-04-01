@@ -8,13 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for FFCStorage.
 FOUNDATION_EXPORT double FFCStorageVersionNumber;
-
-//! Project version string for FFCStorage.
 FOUNDATION_EXPORT const unsigned char FFCStorageVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <FFCStorage/PublicHeader.h>
 
 #import <FFCStorage/FFCNetworkClient.h>
 #import <FFCStorage/FFCBearerCredentials.h>

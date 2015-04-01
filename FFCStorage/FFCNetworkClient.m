@@ -30,25 +30,7 @@ static FFCNetworkClient *_sharedClient = nil;
     _sharedClient = self;
 }
 
-- (instancetype)init
-{
-    return [self initWithHost:nil path:nil];
-}
-
 - (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host port:(NSNumber *)port path:(NSString *)path
-{
-    self = [self initWithScheme:scheme host:host path:path];
-    
-    if (self == nil) {
-        return nil;
-    }
-    
-    _port = port;
-    
-    return self;
-}
-
-- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path
 {
     self = [super init];
     NSAssert(host!=nil, @"Initializing a Client without a hostname is not allowed.");
@@ -70,9 +52,16 @@ static FFCNetworkClient *_sharedClient = nil;
     
     _host = [host copy];
     _path = [path copy] ?: @"/";
+    _port = [port copy] ?: @80;
     
     _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
+    return self;
+}
+
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:(NSString *)host path:(NSString *)path
+{
+    self = [self initWithScheme:scheme host:host port:nil path:path];
     return self;
 }
 
