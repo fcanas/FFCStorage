@@ -6,17 +6,18 @@
 //  Copyright (c) 2015 Fabian Canas. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 @interface FFCBearerCredentials : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-- (instancetype)initWithToken:(NSString *)token
-                          Uid:(NSString *)uid
-                       expiry:(NSDate *)date
-                       client:(NSString *)client NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithToken:(NSString *)token
+                                   Uid:(NSString *)uid
+                                expiry:(NSDate *)date
+                                client:(NSString *)client NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly, copy) NSString *client;
 @property (nonatomic, readonly, copy) NSString *uid;
@@ -26,3 +27,4 @@
 - (BOOL)isValid;
 
 @end
+NS_ASSUME_NONNULL_END
