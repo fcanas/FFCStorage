@@ -1,5 +1,7 @@
 # FFCStorage
 
+[![CI Status](http://img.shields.io/travis/fcanas/FFCStorage.svg?style=flat)](https://travis-ci.org/fcanas/FFCStorage)
+
 Mostly Auth and Network adapter junk so you can write a model store without thinking too hard.
 
 ```objc

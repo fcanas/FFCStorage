@@ -88,7 +88,6 @@ NSString * const FFCClientKey = @"FFCClientKey";
                                                                                              options:kNilOptions
                                                                                                error:nil]];
         NSArray *errorsArray = [NSArray safe_cast:responseDataDict[@"errors"]];
-        NSDictionary *errorsDict = [NSDictionary safe_cast:responseDataDict[@"errors"]];
         NSDictionary *userDataDict = [NSDictionary safe_cast:responseDataDict[@"data"]];
         FXKeychain *keychain = [FXKeychain defaultKeychain];
         

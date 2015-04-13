@@ -1,0 +1,11 @@
+language: objective-c
+rvm:
+- 2.0.0 # For CocoaPods, which requires ruby 2.0 and above
+env:
+  global:
+  - LANG=en_US.UTF-8
+install:
+- bundle install --jobs=3
+script:
+- rake run_tests
+- rake lint_podspec

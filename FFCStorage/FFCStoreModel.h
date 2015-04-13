@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+#import <FFCStorage/FFCStoreNullability.h>
 
 @protocol FFCStoreModel <NSObject>
 
@@ -15,17 +16,17 @@
 /**
  Route for instance of the store model.
  */
-- (nullable NSString *)route;
+- (ffc_nullable NSString *)route;
 
 /**
  Route appropriate for a collection of instances of the store model class
  */
-+ (nullable NSString *)route;
++ (ffc_nullable NSString *)route;
 
 /**
  A JSON-equivalent representation of the receiving instance. This method is
  called by @p FFCStore for serialization.
  */
-- (nullable NSDictionary *)asJSON;
+- (ffc_nullable NSDictionary *)asJSON;
 
 @end

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                    Auth and Network handling so you can store models in s RESTful API.
                    DESC
 
-  # s.homepage     = "http://EXAMPLE/FFCStorage"
+  s.homepage     = "https://github.com/fcanas/FFCStorage"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   
   s.license      = "MIT"  

@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+#import <FFCStorage/FFCStoreNullability.h>
+
 typedef NS_ENUM(NSUInteger, FFCClientScheme) {
     FFCClientSchemeHTTP,
     FFCClientSchemeHTTPS
@@ -15,8 +17,7 @@ typedef NS_ENUM(NSUInteger, FFCClientScheme) {
 
 @class FFCBearerCredentials;
 
-NS_ASSUME_NONNULL_BEGIN
-
+FFC_ASSUME_NONNULL_BEGIN
 @interface FFCNetworkClient : NSObject
 
 #pragma mark - Creating a Network Client
@@ -31,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (nullable instancetype)initWithHost:( NSString * )host path:( nullable NSString  * )path;
+- (ffc_nullable instancetype)initWithHost:( NSString * )host path:( ffc_nullable NSString  * )path;
 
 /**
  The designated initializer for @p FFCNetworkClient
@@ -40,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host port:( nullable NSNumber * )port path:( nullable NSString  * )path NS_DESIGNATED_INITIALIZER;
+- (ffc_nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host port:( ffc_nullable NSNumber * )port path:( ffc_nullable NSString  * )path NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes the receiver and configures network requests to go over port 80
@@ -49,14 +50,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host path:( nullable NSString  * )path;
+- (ffc_nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host path:( ffc_nullable NSString  * )path;
 
 #pragma mark - Credentials
 
 /**
  A credential model that will be used to configure headers on authenticated network requests initiated from the network client.
  */
-@property (nonatomic, strong, nullable) FFCBearerCredentials *credentials;
+@property (nonatomic, strong, ffc_nullable) FFCBearerCredentials *credentials;
 
 #pragma mark - Shared Client
 
@@ -69,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @see -makeSharedClient
  */
-+ (nullable instancetype)sharedClient;
++ (ffc_nullable instancetype)sharedClient;
 
 /**
  Promotes the receiving instance of @p FFCNetworkClient to the @p sharedClient accessible
@@ -88,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @see session
  */
-- (nullable NSMutableURLRequest *)baseRequestForSubpath:( nullable NSString * )subpath;
+- (ffc_nullable NSMutableURLRequest *)baseRequestForSubpath:( ffc_nullable NSString * )subpath;
 
 /**
  The @p NSURLSession used by the network client to make network requests. It may be used
@@ -100,4 +101,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+FFC_ASSUME_NONNULL_END

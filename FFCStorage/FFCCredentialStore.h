@@ -7,16 +7,18 @@
 //
 
 @import Foundation;
+#import <FFCStorage/FFCStoreNullability.h>
 
 @class FFCNetworkClient;
 @class FFCBearerCredentials;
 
+FFC_ASSUME_NONNULL_BEGIN
 @interface FFCCredentialStore : NSObject
 
 /**
  Initializes a new credential store using the default @p FFCNetworkClient
  */
-- (instancetype)init;
+- (ffc_nullable instancetype)init;
 
 /**
  Initializes a new credential store using the provided @p FFCNetworkClient
@@ -25,7 +27,7 @@
  When credentials are loaded from the keychain or the network, those credentials are then
  passed to the network client for use in authenticated requests.
  */
-- (instancetype)initWithClient:(FFCNetworkClient *)client NS_DESIGNATED_INITIALIZER;
+- (ffc_nullable instancetype)initWithClient:(FFCNetworkClient *)client NS_DESIGNATED_INITIALIZER;
 
 /**
  Attempts to load credentials from the keychain first. If tokens are found to be expired,
@@ -60,3 +62,4 @@
 + (void)clearCredentials;
 
 @end
+FFC_ASSUME_NONNULL_END

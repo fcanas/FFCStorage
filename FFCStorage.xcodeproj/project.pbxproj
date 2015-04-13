@@ -21,6 +21,7 @@
 		E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */; };
 		E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */; };
 		E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22451A9E7ACF00A855D1 /* FFCStore.h */; };
+		E7E66C421ADC1E190091CB00 /* FFCStoreNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		815B2C762D26A7F5E90A6493 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA83566A1180A3D4944F07DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCStoreNullability.h; sourceTree = "<group>"; };
 		E7BA22141A9E29C900A855D1 /* FFCStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA22181A9E29C900A855D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7BA22191A9E29C900A855D1 /* FFCStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCStorage.h; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */,
 				E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */,
 				E7BA22451A9E7ACF00A855D1 /* FFCStore.h */,
+				E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */,
 			);
 			path = FFCStorage;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */,
+				E7E66C421ADC1E190091CB00 /* FFCStoreNullability.h in Headers */,
 				E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */,
 				E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */,
 				E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */,

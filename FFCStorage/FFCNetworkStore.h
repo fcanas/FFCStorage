@@ -9,6 +9,7 @@
 @import Foundation;
 
 #import <FFCStorage/FFCStore.h>
+#import <FFCStorage/FFCStoreNullability.h>
 
 @class FFCNetworkClient;
 
@@ -21,11 +22,11 @@
 /**
  Configures the receiver with the default @p FFCNetworkClient
  */
-- (nullable instancetype)init;
+- (ffc_nullable instancetype)init;
 
 /**
  Configures the receiver with the provided @p FFCNetworkClient
  */
-- (nullable instancetype)initWithNetworkClient:(nonnull FFCNetworkClient *)networkClient NS_DESIGNATED_INITIALIZER;
+- (ffc_nullable instancetype)initWithNetworkClient:(ffc_nonnull FFCNetworkClient *)networkClient NS_DESIGNATED_INITIALIZER;
 
 @end

@@ -8,13 +8,15 @@
 
 @import Foundation;
 
-NS_ASSUME_NONNULL_BEGIN
+#import <FFCStorage/FFCStoreNullability.h>
+
+FFC_ASSUME_NONNULL_BEGIN
 @interface FFCBearerCredentials : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-- (nullable instancetype)initWithToken:(NSString *)token
+- (ffc_nullable instancetype)initWithToken:(NSString *)token
                                    Uid:(NSString *)uid
                                 expiry:(NSDate *)date
                                 client:(NSString *)client NS_DESIGNATED_INITIALIZER;
@@ -27,4 +29,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isValid;
 
 @end
-NS_ASSUME_NONNULL_END
+FFC_ASSUME_NONNULL_END

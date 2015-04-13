@@ -4,9 +4,9 @@ PODS:
   - SafeCast (1.1.1)
 
 DEPENDENCIES:
-  - FXKeychain
-  - OHMKit
-  - SafeCast
+  - FXKeychain (~> 1.5.2)
+  - OHMKit (~> 0.2.0)
+  - SafeCast (~> 1.1.1)
 
 SPEC CHECKSUMS:
   FXKeychain: 1a711bddc04a2bd69850dcfe297b8a43027a9980
