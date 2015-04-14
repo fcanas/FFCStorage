@@ -35,7 +35,7 @@ FFC_ASSUME_NONNULL_BEGIN
 
  If cretendials are obtained, the network client is configured with those credentials.
  */
-- (void)restoreSession:(void(^)(NSDictionary *, NSError *))completion;
+- (void)restoreSession:(void(^)(NSDictionary * __ffc_nullable, NSError * __ffc_nullable))completion;
 
 /**
  Attempts to configure credentials with an existing remote account via the network client.
@@ -44,7 +44,7 @@ FFC_ASSUME_NONNULL_BEGIN
  */
 - (void)loginWithEmail:(NSString *)email
               password:(NSString *)password
-            completion:(void(^)(NSDictionary *userData, NSString *errorMessage))completion;
+            completion:(void(^)(NSDictionary * __ffc_nullable userData, NSString * __ffc_nullable errorMessage))completion;
 
 /**
  Attempts to configure credentials creating a new remote account via the network client.
@@ -53,7 +53,7 @@ FFC_ASSUME_NONNULL_BEGIN
  */
 - (void)signupWithEmail:(NSString *)email
                password:(NSString *)password
-             completion:(void(^)(NSDictionary *userData, NSString *errorMessage))completion;
+             completion:(void(^)(NSDictionary * __ffc_nullable userData, NSString * __ffc_nullable errorMessage))completion;
 
 /**
  Removes all credential components from the keychain. 

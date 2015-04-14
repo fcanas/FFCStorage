@@ -7,15 +7,18 @@
 //
 
 @import Foundation;
+#import <FFCStorage/FFCStoreNullability.h>
 
 @protocol FFCStoreModel;
 
+FFC_ASSUME_NONNULL_BEGIN
 @protocol FFCStore <NSObject>
-- (void)getClass:(Class<FFCStoreModel>)class completion:(void(^)(NSArray *, NSError *))completion;
-- (void)getClass:(Class)class atPath:(NSString *)path completion:(void(^)(NSArray *, NSError *))completion;
+- (void)getClass:(Class<FFCStoreModel>)class completion:(void(^)(NSArray *__ffc_nullable, NSError *__ffc_nullable))completion;
+- (void)getClass:(Class)class atPath:(NSString *)path completion:(void(^)(NSArray *__ffc_nullable, NSError *__ffc_nullable))completion;
 
-- (void)getModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *))completion;
-- (void)saveModel:(NSObject<FFCStoreModel> *)model completion:(void(^)(NSObject<FFCStoreModel> *, NSError *))completion;
+- (void)getModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *__ffc_nullable))completion;
+- (void)saveModel:(NSObject<FFCStoreModel> *)model completion:(void(^)(NSObject<FFCStoreModel> *__ffc_nullable, NSError *__ffc_nullable))completion;
 
 - (void)deleteModel:(NSObject<FFCStoreModel> *)model;
 @end
+FFC_ASSUME_NONNULL_END
