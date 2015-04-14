@@ -32,7 +32,7 @@ FFC_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (ffc_nullable instancetype)initWithHost:( NSString * )host path:( ffc_nullable NSString  * )path;
+- (instancetype)initWithHost:( NSString * )host path:( ffc_nullable NSString  * )path;
 
 /**
  The designated initializer for @p FFCNetworkClient
@@ -41,7 +41,7 @@ FFC_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (ffc_nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host port:( ffc_nullable NSNumber * )port path:( ffc_nullable NSString  * )path NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host port:( ffc_nullable NSNumber * )port path:( ffc_nullable NSString  * )path NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes the receiver and configures network requests to go over port 80
@@ -50,7 +50,7 @@ FFC_ASSUME_NONNULL_BEGIN
  @param host The hostname for the server the network client will communicate with. The hostname is a string betwen the scheme (<i>e.g.</i> https) and the first @p / in the path
  @param path The path prefix that will be prepended to each URL the network client generates. This is useful for namespacing an API, <i>e.g.</i>  @p \@"/v1" . The @p path should include a preceeding @p /
  */
-- (ffc_nullable instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host path:( ffc_nullable NSString  * )path;
+- (instancetype)initWithScheme:(FFCClientScheme)scheme host:( NSString * )host path:( ffc_nullable NSString  * )path;
 
 #pragma mark - Credentials
 

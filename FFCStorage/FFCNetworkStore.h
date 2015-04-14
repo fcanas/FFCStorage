@@ -22,11 +22,11 @@
 /**
  Configures the receiver with the default @p FFCNetworkClient
  */
-- (ffc_nullable instancetype)init;
+- (ffc_nonnull instancetype)init;
 
 /**
  Configures the receiver with the provided @p FFCNetworkClient
  */
-- (ffc_nullable instancetype)initWithNetworkClient:(ffc_nonnull FFCNetworkClient *)networkClient NS_DESIGNATED_INITIALIZER;
+- (ffc_nonnull instancetype)initWithNetworkClient:(ffc_nonnull FFCNetworkClient *)networkClient NS_DESIGNATED_INITIALIZER;
 
 @end

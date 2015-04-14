@@ -18,7 +18,7 @@ FFC_ASSUME_NONNULL_BEGIN
 /**
  Initializes a new credential store using the default @p FFCNetworkClient
  */
-- (ffc_nullable instancetype)init;
+- (instancetype)init;
 
 /**
  Initializes a new credential store using the provided @p FFCNetworkClient
@@ -27,7 +27,7 @@ FFC_ASSUME_NONNULL_BEGIN
  When credentials are loaded from the keychain or the network, those credentials are then
  passed to the network client for use in authenticated requests.
  */
-- (ffc_nullable instancetype)initWithClient:(FFCNetworkClient *)client NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithClient:(FFCNetworkClient *)client NS_DESIGNATED_INITIALIZER;
 
 /**
  Attempts to load credentials from the keychain first. If tokens are found to be expired,
