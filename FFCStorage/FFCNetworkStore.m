@@ -102,7 +102,7 @@
 {
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:instance.route];
-    request.HTTPMethod = ([instance id] == 0)?@"POST":@"PUT";
+    request.HTTPMethod = ([instance id] == nil)?@"POST":@"PUT";
     request.HTTPBody = [NSJSONSerialization dataWithJSONObject:[instance asJSON]
                                                        options:kNilOptions
                                                          error:&serializationError];
@@ -142,7 +142,7 @@
 
 - (void)deleteModel:(NSObject<FFCStoreModel> *)model
 {
-    if (model == nil || model.id < 1) {
+    if (model == nil) {
         return;
     }
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:[model route]];

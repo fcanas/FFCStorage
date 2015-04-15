@@ -11,7 +11,10 @@
 
 @protocol FFCStoreModel <NSObject>
 
-@property (nonatomic, assign) NSInteger id;
+/*
+ Primary key for storage
+ */
+@property (nonatomic, copy, ffc_nullable) NSString *id;
 
 /**
  Route for instance of the store model.
