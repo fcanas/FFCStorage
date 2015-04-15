@@ -2,7 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/fcanas/FFCStorage.svg?style=flat)](https://travis-ci.org/fcanas/FFCStorage)
 
-Mostly Auth and Network adapter junk so you can write a model store without thinking too hard.
+Auth and Network handling so you can store models in a RESTful API.
 
 ```objc
 // Configure a network client
