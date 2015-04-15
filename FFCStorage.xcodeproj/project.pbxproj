@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1EBAC402F18B33C76A2DD1B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 815B2C762D26A7F5E90A6493 /* libPods.a */; };
+		E7981FAB1ADDE35F0068AC1E /* FFCBearerCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA31ADDE35F0068AC1E /* FFCBearerCredentials.h */; };
+		E7981FAC1ADDE35F0068AC1E /* FFCBearerCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981FA41ADDE35F0068AC1E /* FFCBearerCredentials.m */; };
+		E7981FAD1ADDE35F0068AC1E /* FFCCredentialStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA51ADDE35F0068AC1E /* FFCCredentialStore.h */; };
+		E7981FAE1ADDE35F0068AC1E /* FFCCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981FA61ADDE35F0068AC1E /* FFCCredentialStore.m */; };
+		E7981FAF1ADDE35F0068AC1E /* FFCNetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA71ADDE35F0068AC1E /* FFCNetworkClient.h */; };
+		E7981FB01ADDE35F0068AC1E /* FFCNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981FA81ADDE35F0068AC1E /* FFCNetworkClient.m */; };
+		E7981FB11ADDE35F0068AC1E /* FFCNetworkStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA91ADDE35F0068AC1E /* FFCNetworkStore.h */; };
+		E7981FB21ADDE35F0068AC1E /* FFCNetworkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981FAA1ADDE35F0068AC1E /* FFCNetworkStore.m */; };
+		E7981FB61ADDE3A90068AC1E /* FFCRealmStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FB41ADDE3A90068AC1E /* FFCRealmStore.h */; };
+		E7981FB71ADDE3A90068AC1E /* FFCRealmStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981FB51ADDE3A90068AC1E /* FFCRealmStore.m */; };
 		E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22191A9E29C900A855D1 /* FFCStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7BA22201A9E29C900A855D1 /* FFCStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA22141A9E29C900A855D1 /* FFCStorage.framework */; };
 		E7BA22271A9E29C900A855D1 /* FFCStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22261A9E29C900A855D1 /* FFCStorageTests.m */; };
-		E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */; };
-		E7BA22331A9E2C3300A855D1 /* FFCNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */; };
-		E7BA22361A9E2D0C00A855D1 /* FFCBearerCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */; };
-		E7BA22371A9E2D0C00A855D1 /* FFCBearerCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */; };
 		E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */; };
-		E7BA223C1A9E2EAD00A855D1 /* FFCNetworkStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */; };
-		E7BA223D1A9E2EAD00A855D1 /* FFCNetworkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */; };
-		E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */; };
-		E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */; };
 		E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BA22451A9E7ACF00A855D1 /* FFCStore.h */; };
 		E7E66C421ADC1E190091CB00 /* FFCStoreNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */; };
 /* End PBXBuildFile section */
@@ -38,21 +40,23 @@
 		815B2C762D26A7F5E90A6493 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA83566A1180A3D4944F07DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCStoreNullability.h; sourceTree = "<group>"; };
+		E7981FA31ADDE35F0068AC1E /* FFCBearerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCBearerCredentials.h; sourceTree = "<group>"; };
+		E7981FA41ADDE35F0068AC1E /* FFCBearerCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCBearerCredentials.m; sourceTree = "<group>"; };
+		E7981FA51ADDE35F0068AC1E /* FFCCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCCredentialStore.h; sourceTree = "<group>"; };
+		E7981FA61ADDE35F0068AC1E /* FFCCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCCredentialStore.m; sourceTree = "<group>"; };
+		E7981FA71ADDE35F0068AC1E /* FFCNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkClient.h; sourceTree = "<group>"; };
+		E7981FA81ADDE35F0068AC1E /* FFCNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkClient.m; sourceTree = "<group>"; };
+		E7981FA91ADDE35F0068AC1E /* FFCNetworkStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkStore.h; sourceTree = "<group>"; };
+		E7981FAA1ADDE35F0068AC1E /* FFCNetworkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkStore.m; sourceTree = "<group>"; };
+		E7981FB41ADDE3A90068AC1E /* FFCRealmStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCRealmStore.h; sourceTree = "<group>"; };
+		E7981FB51ADDE3A90068AC1E /* FFCRealmStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCRealmStore.m; sourceTree = "<group>"; };
 		E7BA22141A9E29C900A855D1 /* FFCStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA22181A9E29C900A855D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7BA22191A9E29C900A855D1 /* FFCStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCStorage.h; sourceTree = "<group>"; };
 		E7BA221F1A9E29C900A855D1 /* FFCStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA22251A9E29C900A855D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7BA22261A9E29C900A855D1 /* FFCStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCStorageTests.m; sourceTree = "<group>"; };
-		E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkClient.h; sourceTree = "<group>"; };
-		E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkClient.m; sourceTree = "<group>"; };
-		E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCBearerCredentials.h; sourceTree = "<group>"; };
-		E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCBearerCredentials.m; sourceTree = "<group>"; };
 		E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCStoreModel.h; sourceTree = "<group>"; };
-		E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCNetworkStore.h; sourceTree = "<group>"; };
-		E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCNetworkStore.m; sourceTree = "<group>"; };
-		E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCCredentialStore.h; sourceTree = "<group>"; };
-		E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCCredentialStore.m; sourceTree = "<group>"; };
 		E7BA22451A9E7ACF00A855D1 /* FFCStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCStore.h; sourceTree = "<group>"; };
 		FCD922668BBB5B21E6F25DB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +98,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E7981FA21ADDE30B0068AC1E /* Network Store */ = {
+			isa = PBXGroup;
+			children = (
+				E7981FA31ADDE35F0068AC1E /* FFCBearerCredentials.h */,
+				E7981FA41ADDE35F0068AC1E /* FFCBearerCredentials.m */,
+				E7981FA51ADDE35F0068AC1E /* FFCCredentialStore.h */,
+				E7981FA61ADDE35F0068AC1E /* FFCCredentialStore.m */,
+				E7981FA71ADDE35F0068AC1E /* FFCNetworkClient.h */,
+				E7981FA81ADDE35F0068AC1E /* FFCNetworkClient.m */,
+				E7981FA91ADDE35F0068AC1E /* FFCNetworkStore.h */,
+				E7981FAA1ADDE35F0068AC1E /* FFCNetworkStore.m */,
+			);
+			path = "Network Store";
+			sourceTree = "<group>";
+		};
+		E7981FB31ADDE3700068AC1E /* Realm Store */ = {
+			isa = PBXGroup;
+			children = (
+				E7981FB41ADDE3A90068AC1E /* FFCRealmStore.h */,
+				E7981FB51ADDE3A90068AC1E /* FFCRealmStore.m */,
+			);
+			path = "Realm Store";
+			sourceTree = "<group>";
+		};
 		E7BA220A1A9E29C900A855D1 = {
 			isa = PBXGroup;
 			children = (
@@ -117,17 +145,11 @@
 		E7BA22161A9E29C900A855D1 /* FFCStorage */ = {
 			isa = PBXGroup;
 			children = (
+				E7981FB31ADDE3700068AC1E /* Realm Store */,
+				E7981FA21ADDE30B0068AC1E /* Network Store */,
 				E7BA22191A9E29C900A855D1 /* FFCStorage.h */,
 				E7BA22171A9E29C900A855D1 /* Supporting Files */,
-				E7BA22301A9E2C3300A855D1 /* FFCNetworkClient.h */,
-				E7BA22311A9E2C3300A855D1 /* FFCNetworkClient.m */,
-				E7BA22341A9E2D0C00A855D1 /* FFCBearerCredentials.h */,
-				E7BA22351A9E2D0C00A855D1 /* FFCBearerCredentials.m */,
 				E7BA22381A9E2E2F00A855D1 /* FFCStoreModel.h */,
-				E7BA223A1A9E2EAD00A855D1 /* FFCNetworkStore.h */,
-				E7BA223B1A9E2EAD00A855D1 /* FFCNetworkStore.m */,
-				E7BA223E1A9E379F00A855D1 /* FFCCredentialStore.h */,
-				E7BA223F1A9E379F00A855D1 /* FFCCredentialStore.m */,
 				E7BA22451A9E7ACF00A855D1 /* FFCStore.h */,
 				E7981FA11ADB59F50068AC1E /* FFCStoreNullability.h */,
 			);
@@ -166,14 +188,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7BA22321A9E2C3300A855D1 /* FFCNetworkClient.h in Headers */,
 				E7E66C421ADC1E190091CB00 /* FFCStoreNullability.h in Headers */,
 				E7BA22461A9E7ACF00A855D1 /* FFCStore.h in Headers */,
+				E7981FAF1ADDE35F0068AC1E /* FFCNetworkClient.h in Headers */,
 				E7BA221A1A9E29C900A855D1 /* FFCStorage.h in Headers */,
+				E7981FAD1ADDE35F0068AC1E /* FFCCredentialStore.h in Headers */,
+				E7981FB11ADDE35F0068AC1E /* FFCNetworkStore.h in Headers */,
+				E7981FAB1ADDE35F0068AC1E /* FFCBearerCredentials.h in Headers */,
+				E7981FB61ADDE3A90068AC1E /* FFCRealmStore.h in Headers */,
 				E7BA22391A9E2E2F00A855D1 /* FFCStoreModel.h in Headers */,
-				E7BA22401A9E379F00A855D1 /* FFCCredentialStore.h in Headers */,
-				E7BA22361A9E2D0C00A855D1 /* FFCBearerCredentials.h in Headers */,
-				E7BA223C1A9E2EAD00A855D1 /* FFCNetworkStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7BA22331A9E2C3300A855D1 /* FFCNetworkClient.m in Sources */,
-				E7BA223D1A9E2EAD00A855D1 /* FFCNetworkStore.m in Sources */,
-				E7BA22411A9E379F00A855D1 /* FFCCredentialStore.m in Sources */,
-				E7BA22371A9E2D0C00A855D1 /* FFCBearerCredentials.m in Sources */,
+				E7981FB71ADDE3A90068AC1E /* FFCRealmStore.m in Sources */,
+				E7981FAE1ADDE35F0068AC1E /* FFCCredentialStore.m in Sources */,
+				E7981FB01ADDE35F0068AC1E /* FFCNetworkClient.m in Sources */,
+				E7981FB21ADDE35F0068AC1E /* FFCNetworkStore.m in Sources */,
+				E7981FAC1ADDE35F0068AC1E /* FFCBearerCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

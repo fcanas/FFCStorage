@@ -16,3 +16,4 @@ FOUNDATION_EXPORT const unsigned char FFCStorageVersionString[];
 #import <FFCStorage/FFCStoreModel.h>
 #import <FFCStorage/FFCNetworkStore.h>
 #import <FFCStorage/FFCCredentialStore.h>
+#import <FFCStorage/FFCRealmStore.h>

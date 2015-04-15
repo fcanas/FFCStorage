@@ -52,5 +52,6 @@ Pod::Spec.new do |s|
   s.dependency "OHMKit", "~> 0.2.0"
   s.dependency "SafeCast", "~> 1.1.1"
   s.dependency "FXKeychain", "~> 1.5.2"
+  s.dependency "Realm", git: 'https://github.com/fcanas/realm-cocoa.git', commit: '2767a1951bd4c554874170e852c2e382fa8e715b'
   
 end
