@@ -39,21 +39,21 @@ NSString * const FFCClientKey = @"FFCClientKey";
 {
     self = [super init];
     if (self == nil) return nil;
-    
+
     _client = client ?: [FFCNetworkClient sharedClient];
-    
+
     return self;
 }
 
 - (void)restoreSession:(void(^)(NSDictionary *, NSError *))completion
 {
     FFCKeychainCredentials *credentials = [FFCKeychainCredentials credentialsFromKeyChain];
-    
+
     if (credentials == nil) {
         completion(nil, nil);
         return;
     }
-    
+
     [self loginWithEmail:credentials.email
                 password:credentials.password
               completion:^(NSDictionary *userData, NSString *errorString) {
@@ -66,13 +66,13 @@ NSString * const FFCClientKey = @"FFCClientKey";
             completion:(void(^)(NSDictionary *userData, NSString *errorMessage))completion
 {
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:@"/auth/sign_in"];
-    
+
     NSDictionary *body = @{@"email" : email,
                            @"password": password};
     NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:kNilOptions error:nil];
     request.HTTPMethod = @"POST";
     [request setHTTPBody:bodyData];
-    
+
     [self authenticateRequest:request password:password completion:completion];
 }
 
@@ -83,14 +83,14 @@ NSString * const FFCClientKey = @"FFCClientKey";
         if (error) {
             NSLog(@"error: %@", error);
         }
-        
+
         NSDictionary *responseDataDict = [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
                                                                                              options:kNilOptions
                                                                                                error:nil]];
         NSArray *errorsArray = [NSArray safe_cast:responseDataDict[@"errors"]];
         NSDictionary *userDataDict = [NSDictionary safe_cast:responseDataDict[@"data"]];
         FXKeychain *keychain = [FXKeychain defaultKeychain];
-        
+
         if (![NSHTTPURLResponse safe_cast:response intoBlock:^(NSHTTPURLResponse *response) {
             if (response.statusCode == 200) {
                 __block BOOL validToken = NO;
@@ -123,7 +123,7 @@ NSString * const FFCClientKey = @"FFCClientKey";
             completion(nil, errorsArray.firstObject);
         };
     }];
-    
+
     [task resume];
 }
 
@@ -132,13 +132,14 @@ NSString * const FFCClientKey = @"FFCClientKey";
              completion:(void(^)(NSDictionary *userData, NSString *errorMessage))completion
 {
     NSMutableURLRequest *request = [self.client baseRequestForSubpath:@"/auth/"];
-    
+
     NSDictionary *body = @{@"email" : email,
-                           @"password": password};
+                           @"password": password,
+                           @"password_confirmation": password};
     NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:kNilOptions error:nil];
     request.HTTPMethod = @"POST";
     [request setHTTPBody:bodyData];
-    
+
     [self authenticateRequest:request password:password completion:completion];
 }
 
@@ -167,7 +168,7 @@ NSString * const FFCClientKey = @"FFCClientKey";
 {
     FXKeychain *keychain = [FXKeychain defaultKeychain];
     __block FFCKeychainCredentials *credentials = nil;
-    
+
     [NSString safe_cast:[keychain objectForKey:FFCCurrentUserEmailKey] intoBlock:^(NSString *email) {
         [NSString safe_cast:[keychain objectForKey:FFCCurrentUserPasswordKey] intoBlock:^(NSString *pasword) {
             credentials = [[self alloc] init];
@@ -179,4 +180,3 @@ NSString * const FFCClientKey = @"FFCClientKey";
 }
 
 @end
-
