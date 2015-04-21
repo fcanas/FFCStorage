@@ -18,6 +18,7 @@ FFC_ASSUME_NONNULL_BEGIN
 
 - (void)getModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSError *__ffc_nullable))completion;
 - (void)saveModel:(NSObject<FFCStoreModel> *)model completion:(void(^)(NSObject<FFCStoreModel> *__ffc_nullable, NSError *__ffc_nullable))completion;
+- (void)saveModel:(NSObject<FFCStoreModel> *)instance atPath:(NSString *)path completion:(void(^)(NSObject<FFCStoreModel> *__ffc_nullable, NSError *__ffc_nullable))completion;
 
 - (void)deleteModel:(NSObject<FFCStoreModel> *)model;
 @end

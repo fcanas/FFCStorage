@@ -100,8 +100,13 @@
 
 - (void)saveModel:(NSObject<FFCStoreModel> *)instance completion:(void(^)(NSObject<FFCStoreModel> *, NSError *))completion
 {
+    [self saveModel:instance atPath:instance.route completion:completion];
+}
+
+- (void)saveModel:(NSObject<FFCStoreModel> *)instance atPath:(NSString *)path completion:(void(^)(NSObject<FFCStoreModel> *, NSError *))completion
+{
     NSError *serializationError = nil;
-    NSMutableURLRequest *request = [self.client baseRequestForSubpath:instance.route];
+    NSMutableURLRequest *request = [self.client baseRequestForSubpath:path];
     request.HTTPMethod = ([instance id] == nil)?@"POST":@"PUT";
     request.HTTPBody = [NSJSONSerialization dataWithJSONObject:[instance asJSON]
                                                        options:kNilOptions
