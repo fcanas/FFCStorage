@@ -8,6 +8,17 @@
 
 #import "FFCNetworkClient.h"
 #import "FFCBearerCredentials.h"
+#import <SafeCast/SafeCast.h>
+
+NSString * const FFCNetworkClientHTTPErrorDomain = @"FFCNetworkClientHTTPErrorDomain";
+
+const NSRange FFCNetworkHTTPInformationalRange = (NSRange){ .location=100, .length=99 };
+const NSRange FFCNetworkHTTPSuccessRange = (NSRange){ .location=200, .length=99 };
+const NSRange FFCNetworkHTTPRedirectRange = (NSRange){ .location=300, .length=99 };
+const NSRange FFCNetworkHTTPClientErrorRange = (NSRange){ .location=400, .length=99 };
+const NSRange FFCNetworkHTTPServerErrorRange = (NSRange){ .location=500, .length=99 };
+
+const NSRange FFCNetworkHTTPErrorRange = (NSRange){ .location=400, .length=199 };
 
 @interface FFCNetworkClient ()
 @property (nonatomic, readonly, copy) NSString *host;
@@ -97,6 +108,27 @@ static FFCNetworkClient *_sharedClient = nil;
     request.allHTTPHeaderFields = headerFields;
     
     return request;
+}
+
++ (URLSessionCompletionHandler)networkCompletionHandler:(NetworkClientCompletionHandler)completion
+{
+    return ^(NSData *data, NSURLResponse *response, NSError *networkError) {
+        NSError * __block httpError = nil;
+        [NSHTTPURLResponse safe_cast:response
+                           intoBlock:^(NSHTTPURLResponse *httpResponse) {
+                               if (NSLocationInRange(httpResponse.statusCode, FFCNetworkHTTPErrorRange)) {
+                                   httpError = [[NSError alloc] initWithDomain:FFCNetworkClientHTTPErrorDomain
+                                                                          code:httpResponse.statusCode
+                                                                      userInfo:@{}];
+                               }
+                           }];
+        
+        NSError *serializationError = nil;
+        NSObject *deserializedObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                       options:kNilOptions
+                                                                         error:&serializationError];
+        completion(deserializedObject, networkError?:httpError?:serializationError);
+    };
 }
 
 @end

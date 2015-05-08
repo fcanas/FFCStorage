@@ -16,6 +16,12 @@
 @property (nonatomic, strong) FFCNetworkClient *client;
 @end
 
+static NSString * const FFCStoreErrorDomain = @"FFCStoreErrorDomain";
+
+typedef enum : NSUInteger {
+    FFCStoreErrorCodeUnexpectedType,
+} FFCStoreErrorCode;
+
 @implementation FFCNetworkStore
 
 - (instancetype)initWithNetworkClient:(FFCNetworkClient *)networkClient
@@ -123,25 +129,18 @@
     }
     
     NSURLSessionTask *task = [self.client.session dataTaskWithRequest:request
-                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                        NSError *serializationError = nil;
-                                                        NSObject<FFCStoreModel> * __block returnedInstance = nil;
-                                                        
-                                                        [NSDictionary safe_cast:[NSJSONSerialization JSONObjectWithData:data
-                                                                                                                options:kNilOptions
-                                                                                                                  error:&serializationError]
-                                                                      intoBlock:^(NSDictionary *mDict) {
-                                                                          returnedInstance = [[instance class] new];
-                                                                          [returnedInstance setValuesForKeysWithDictionary:mDict];
-                                                                      }];
-                                                        
-                                                        if (serializationError) {
-                                                            completion(nil, serializationError);
-                                                            return;
-                                                        }
-                                                        
-                                                        completion(returnedInstance, error);
-                                                    }];
+                                                    completionHandler:[FFCNetworkClient networkCompletionHandler:^(NSObject *data, NSError *error){
+        NSObject<FFCStoreModel> * __block returnedInstance = nil;
+        NSError * __block returnedError = error;
+        if ([NSDictionary safe_cast:data intoBlock:^(NSDictionary *mDict) {
+            returnedInstance = [[instance class] new];
+            [returnedInstance setValuesForKeysWithDictionary:mDict];
+        }] == nil) {
+            returnedError = error?:[[NSError alloc] initWithDomain:FFCStoreErrorDomain code:FFCStoreErrorCodeUnexpectedType userInfo:@{}];
+        };
+        
+        completion(returnedInstance, returnedError);
+    }]];
     [task resume];
 }
 

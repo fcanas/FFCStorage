@@ -15,6 +15,16 @@ typedef NS_ENUM(NSUInteger, FFCClientScheme) {
     FFCClientSchemeHTTPS
 };
 
+typedef void (^URLSessionCompletionHandler)(NSData * __ffc_nonnull, NSURLResponse * __ffc_nonnull, NSError * __ffc_nullable);
+typedef void (^NetworkClientCompletionHandler)(NSObject * __ffc_nullable, NSError * __ffc_nullable);
+
+extern const NSRange FFCNetworkHTTPInformationalRange;
+extern const NSRange FFCNetworkHTTPSuccessRange;
+extern const NSRange FFCNetworkHTTPRedirectRange;
+extern const NSRange FFCNetworkHTTPClientErrorRange;
+extern const NSRange FFCNetworkHTTPServerErrorRange;
+extern const NSRange FFCNetworkHTTPErrorRange;
+
 @class FFCBearerCredentials;
 
 FFC_ASSUME_NONNULL_BEGIN
@@ -98,6 +108,8 @@ FFC_ASSUME_NONNULL_BEGIN
  @see -baseRequestForSubPath:
  */
 @property (nonatomic, readonly, strong) NSURLSession *session;
+
++ (URLSessionCompletionHandler)networkCompletionHandler:(NetworkClientCompletionHandler)completion;
 
 @end
 
